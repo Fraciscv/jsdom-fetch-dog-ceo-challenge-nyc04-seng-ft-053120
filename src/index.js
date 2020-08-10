@@ -9,7 +9,7 @@ fetch('https://dog.ceo/api/breeds/image/random/4')
 
 function renderDogImgs(dogImgs) {
     dogImgs.forEach(dogImgUrl => {
-        let img = document.createElement('img');
+        const img = document.createElement('img');
         img.src = dogImgUrl;
         img.style.height = '300px'
         dogImageContainer.append(img);
@@ -25,7 +25,7 @@ fetch('https://dog.ceo/api/breeds/list/all')
 
 function turnDogBreedsArrayToHTML(dogBreedsArray) {
     dogBreedsArray.forEach((dogBreed) => {
-        let newLi = document.createElement('li');
+        const newLi = document.createElement('li');
         newLi.innerText = dogBreed;
         dogBreeds.append(newLi);
 
@@ -50,6 +50,6 @@ function getDogBreeds(dogBreedsObject) {
 breedDropdown.addEventListener('change', (e) => {
     dogBreeds.innerHTML = ""
     userSelection = e.target.value;
-    let filteredDogBreedsArray = dogBreedsArray.filter(dogBreed => dogBreed.startsWith(userSelection));
+    const filteredDogBreedsArray = dogBreedsArray.filter(dogBreed => dogBreed.startsWith(userSelection));
     turnDogBreedsArrayToHTML(filteredDogBreedsArray);
 });
